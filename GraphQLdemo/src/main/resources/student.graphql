@@ -1,0 +1,27 @@
+type StudentDetails {
+    studentId: Long
+    firstName: String
+    lastName: String
+    grade: String
+    marks: String
+    schoolName: String
+}
+type Query {
+    allStudents: [StudentDetails]
+    student(id:Long): StudentDetails
+}
+type Mutation {
+    createUser(input: RegisterUserInput): StudentDetails
+}
+
+input RegisterUserInput {
+    firstName: String!
+    lastName: String!
+    grade: String!
+    marks: String!
+    schoolName: String!
+}
+schema {
+    query: Query
+    mutation: Mutation
+}

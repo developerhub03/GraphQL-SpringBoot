@@ -1,0 +1,23 @@
+server:
+    port: 8085
+
+graphiql:
+    mapping: /graphiql
+    enabled: true
+    pageTitle: Student Details
+    endpoint: /graphql
+    cdn:
+        enabled: true
+        version: 0.11.11
+        props:
+            resources:
+                query: student.graphql
+                defaultQuery: student.graphql
+                variables: student.graphql
+graphql:
+    servlet:
+        mapping: /student/details
+        enabled: true
+        corsEnabled: true
+        # if you want to @ExceptionHandler annotation for custom GraphQLErrors
+        exception-handlers-enabled: true
